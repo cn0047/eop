@@ -1,5 +1,6 @@
 package common
 
+// Catch basic implementation which helps to work with `recover` in bit pleasant way.
 func Catch(errors []error, cb func(v interface{})) {
 	r := recover()
 

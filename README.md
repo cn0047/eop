@@ -1,9 +1,11 @@
 Error or Panic
 -
 
-Here you can find 2 approaches how to deal with errors,
+[![Maintainability](https://api.codeclimate.com/v1/badges/caf54b60fe8ae4d9a423/maintainability)](https://codeclimate.com/github/cn007b/eop/maintainability)
+
+Here you can find 2 approaches how to deal with errors:
 first one - return error, another one - panic.
-Which better - it's up to you!
+<br>Which better - it's up to you!
 
 ## Prerequisites
 
@@ -25,28 +27,28 @@ you can see it on sequence diagram:
 git clone https://github.com/cn007b/eop.git && cd eop
 export GOPATH=$PWD
 
-# 1
-go run src/app/main.go --strategy=error
-go run src/app/main.go --strategy=error --username=bond
-go run src/app/main.go --strategy=error --username=james
+# 1: return error
+go run -race src/app/main.go --strategy=error
+go run -race src/app/main.go --strategy=error --username=bond
+go run -race src/app/main.go --strategy=error --username=james
 
-# 2
-go run src/app/main.go --strategy=panic
-go run src/app/main.go --strategy=panic --username=bond
-go run src/app/main.go --strategy=panic --username=james
+# 2: panic
+go run -race src/app/main.go --strategy=panic
+go run -race src/app/main.go --strategy=panic --username=bond
+go run -race src/app/main.go --strategy=panic --username=james
 
-# 3
-go run src/app/main.go --strategy=errorroutine
-go run src/app/main.go --strategy=errorroutine --username=bond
-go run src/app/main.go --strategy=errorroutine --username=james
+# 3: return error from goroutine
+go run -race src/app/main.go --strategy=errorroutine
+go run -race src/app/main.go --strategy=errorroutine --username=bond
+go run -race src/app/main.go --strategy=errorroutine --username=james
 
-# 4
-go run src/app/main.go --strategy=panicroutine
-go run src/app/main.go --strategy=panicroutine --username=bond
-go run src/app/main.go --strategy=panicroutine --username=james
+# 4: panic in goroutine
+go run -race src/app/main.go --strategy=panicroutine
+go run -race src/app/main.go --strategy=panicroutine --username=bond
+go run -race src/app/main.go --strategy=panicroutine --username=james
 
-# 5 😎
-go run src/app/main.go --strategy=panicroutinepro
-go run src/app/main.go --strategy=panicroutinepro --username=bond
-go run src/app/main.go --strategy=panicroutinepro --username=james
+# 5: panic in goroutine like PRO 😎
+go run -race src/app/main.go --strategy=panicroutinepro
+go run -race src/app/main.go --strategy=panicroutinepro --username=bond
+go run -race src/app/main.go --strategy=panicroutinepro --username=james
 ````

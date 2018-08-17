@@ -1,12 +1,13 @@
 package controller
 
 import (
-	"sync"
 	"fmt"
+	"sync"
 
 	"app/errorroutine/service"
 )
 
+// SignUp - entrypoint for errorroutine implementation.
 func SignUp(username string) {
 	msg := "ok"
 	if err := performSignUp(username); err != nil {

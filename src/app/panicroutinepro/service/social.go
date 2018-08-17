@@ -3,40 +3,41 @@ package service
 import (
 	"sync"
 
-	ec "app/panicroutinepro/taxonomy"
 	"app/panicroutinepro/common"
+	ec "app/panicroutinepro/taxonomy"
 )
 
+// MustSignUp - facade for bunch of functions.
 func MustSignUp(username string, ch chan error, wg *sync.WaitGroup) {
 	defer wg.Done()
 	defer common.Catch([]error{ec.ErrorUsernameBlank, ec.ErrorUsernameAlreadyTaken}, func(err interface{}) {
 		ch <- err.(error)
 	})
-	MustValidation(username)
-	MustSignUpFacebook(username)
-	MustSignUpTwitter(username)
-	MustSignUpPinterest(username)
+	mustValidation(username)
+	mustSignUpFacebook(username)
+	mustSignUpTwitter(username)
+	mustSignUpPinterest(username)
 }
 
-func MustValidation(username string) {
+func mustValidation(username string) {
 	if len(username) == 0 {
 		panic(ec.ErrorUsernameBlank)
 	}
 }
 
-func MustSignUpFacebook(username string) {
+func mustSignUpFacebook(username string) {
 	if username == "bond" {
 		panic(ec.ErrorUsernameAlreadyTaken)
 	}
 }
 
-func MustSignUpTwitter(username string) {
+func mustSignUpTwitter(username string) {
 	if username == "leiter" {
 		panic(ec.ErrorUsernameAlreadyTaken)
 	}
 }
 
-func MustSignUpPinterest(username string) {
+func mustSignUpPinterest(username string) {
 	if username == "q" {
 		panic(ec.ErrorUsernameAlreadyTaken)
 	}

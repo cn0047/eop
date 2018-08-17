@@ -1,13 +1,14 @@
 package controller
 
 import (
-	"sync"
 	"fmt"
+	"sync"
 
-	"app/panicroutinepro/service"
 	"app/panicroutinepro/common"
+	"app/panicroutinepro/service"
 )
 
+// SignUp - entrypoint for panicroutinepro implementation.
 func SignUp(username string) {
 	defer common.Catch(nil, func(err interface{}) {
 		fmt.Printf("[panicroutinepro] SignUp: %s \n", err.(error).Error())

@@ -1,31 +1,32 @@
 package service
 
+// MustSignUp - facade for bunch of functions.
 func MustSignUp(username string) {
-	MustValidation(username)
-	MustSignUpFacebook(username)
-	MustSignUpTwitter(username)
-	MustSignUpPinterest(username)
+	mustValidation(username)
+	mustSignUpFacebook(username)
+	mustSignUpTwitter(username)
+	mustSignUpPinterest(username)
 }
 
-func MustValidation(username string) {
+func mustValidation(username string) {
 	if len(username) == 0 {
 		panic("username cannot be blank")
 	}
 }
 
-func MustSignUpFacebook(username string) {
+func mustSignUpFacebook(username string) {
 	if username == "bond" {
 		panic("username already taken")
 	}
 }
 
-func MustSignUpTwitter(username string) {
+func mustSignUpTwitter(username string) {
 	if username == "leiter" {
 		panic("username already taken")
 	}
 }
 
-func MustSignUpPinterest(username string) {
+func mustSignUpPinterest(username string) {
 	if username == "q" {
 		panic("username already taken")
 	}

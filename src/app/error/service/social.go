@@ -4,44 +4,45 @@ import (
 	"fmt"
 )
 
+// SignUp - facade for bunch of functions.
 func SignUp(username string) error {
-	if err := Validation(username); err != nil {
+	if err := validation(username); err != nil {
 		return fmt.Errorf("validation failed, error: %s", err)
 	}
-	if err := SignUpFacebook(username); err != nil {
+	if err := signUpFacebook(username); err != nil {
 		return fmt.Errorf("facebook sign up failed, error: %s", err)
 	}
-	if err := SignUpTwitter(username); err != nil {
+	if err := signUpTwitter(username); err != nil {
 		return fmt.Errorf("twitter sign up failed, error: %s", err)
 	}
-	if err := SignUpPinterest(username); err != nil {
+	if err := signUpPinterest(username); err != nil {
 		return fmt.Errorf("pinterest sign up failed, error: %s", err)
 	}
 	return nil
 }
 
-func Validation(username string) error {
+func validation(username string) error {
 	if len(username) == 0 {
 		return fmt.Errorf("username cannot be blank")
 	}
 	return nil
 }
 
-func SignUpFacebook(username string) error {
+func signUpFacebook(username string) error {
 	if username == "bond" {
 		return fmt.Errorf("username already taken")
 	}
 	return nil
 }
 
-func SignUpTwitter(username string) error {
+func signUpTwitter(username string) error {
 	if username == "leiter" {
 		return fmt.Errorf("username already taken")
 	}
 	return nil
 }
 
-func SignUpPinterest(username string) error {
+func signUpPinterest(username string) error {
 	if username == "q" {
 		return fmt.Errorf("username already taken")
 	}

@@ -1,12 +1,13 @@
 package controller
 
 import (
-	"sync"
 	"fmt"
+	"sync"
 
 	"app/panicroutine/service"
 )
 
+// SignUp - entrypoint for panicroutine implementation.
 func SignUp(username string) {
 	defer func() {
 		msg := "ok"

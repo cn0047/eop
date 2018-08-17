@@ -6,6 +6,7 @@ import (
 	"app/panic/service"
 )
 
+// SignUp - entrypoint for panic implementation.
 func SignUp(username string) {
 	defer func() {
 		msg := "ok"
