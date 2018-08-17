@@ -1,6 +1,9 @@
 Error or Panic
 -
 
+[![CircleCI](https://circleci.com/gh/cn007b/eop.svg?style=svg)](https://circleci.com/gh/cn007b/eop)
+[![Go Report Card](https://goreportcard.com/badge/github.com/cn007b/eop)](https://goreportcard.com/report/github.com/cn007b/eop)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b05afa73b94146d4bd65543d32e7627b)](https://www.codacy.com/app/cn007b/eop?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cn007b/eop&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/caf54b60fe8ae4d9a423/maintainability)](https://codeclimate.com/github/cn007b/eop/maintainability)
 
 Here you can find 2 approaches how to deal with errors:
