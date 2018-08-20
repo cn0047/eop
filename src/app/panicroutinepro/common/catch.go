@@ -1,7 +1,7 @@
 package common
 
-// Catch basic implementation which helps to work with `recover` in bit pleasant way.
-func Catch(errors []error, cb func(v interface{})) {
+// Recover basic implementation which helps to work with `recover` in bit pleasant way.
+func Recover(errors []error, cb func(v interface{})) {
 	r := recover()
 
 	if r == nil {

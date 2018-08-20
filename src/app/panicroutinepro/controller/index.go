@@ -10,7 +10,7 @@ import (
 
 // SignUp - entrypoint for panicroutinepro implementation.
 func SignUp(username string) {
-	defer common.Catch(nil, func(err interface{}) {
+	defer common.Recover(nil, func(err interface{}) {
 		fmt.Printf("[panicroutinepro] SignUp: %s \n", err.(error).Error())
 	})
 	performMustSignUp(username)

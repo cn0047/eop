@@ -10,7 +10,7 @@ import (
 // MustSignUp - facade for bunch of functions.
 func MustSignUp(username string, ch chan error, wg *sync.WaitGroup) {
 	defer wg.Done()
-	defer common.Catch([]error{ec.ErrorUsernameBlank, ec.ErrorUsernameAlreadyTaken}, func(err interface{}) {
+	defer common.Recover([]error{ec.ErrorUsernameBlank, ec.ErrorUsernameAlreadyTaken}, func(err interface{}) {
 		ch <- err.(error)
 	})
 	mustValidation(username)
