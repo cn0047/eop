@@ -14,7 +14,7 @@ first one - return error, another one - panic.
 
 Common stuff between all approaches - workflow:
 here I have one controller which calls service function
-which works like a facade and performs sign up in:
+which works like a facade and performs sign up into:
 
 * facebook
 * twitter
@@ -24,7 +24,14 @@ you can see it on sequence diagram:
 
 ![sequence diagram](/sequenceDiagram.png)
 
+## The point
+
+You can go through `src/app` directory and find implementations for different approaches,
+you can compare different approaches and decide which one is better for you.
+
 ## Usage
+
+To check that all approaches work in same way you can run:
 
 ````bash
 git clone https://github.com/cn007b/eop.git && cd eop
