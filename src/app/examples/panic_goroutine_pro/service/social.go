@@ -3,14 +3,13 @@ package service
 import (
 	"sync"
 
-	"app/panicroutinepro/common"
-	ec "app/panicroutinepro/taxonomy"
+	c "app/common"
 )
 
 // MustSignUp - facade for bunch of functions.
 func MustSignUp(username string, ch chan error, wg *sync.WaitGroup) {
 	defer wg.Done()
-	defer common.Recover([]error{ec.ErrorUsernameBlank, ec.ErrorUsernameAlreadyTaken}, func(err interface{}) {
+	defer c.Recover([]error{c.ErrorUsernameBlank, c.ErrorUsernameAlreadyTaken}, func(err interface{}) {
 		ch <- err.(error)
 	})
 	mustValidation(username)
@@ -21,24 +20,24 @@ func MustSignUp(username string, ch chan error, wg *sync.WaitGroup) {
 
 func mustValidation(username string) {
 	if len(username) == 0 {
-		panic(ec.ErrorUsernameBlank)
+		panic(c.ErrorUsernameBlank)
 	}
 }
 
 func mustSignUpFacebook(username string) {
 	if username == "bond" {
-		panic(ec.ErrorUsernameAlreadyTaken)
+		panic(c.ErrorUsernameAlreadyTaken)
 	}
 }
 
 func mustSignUpTwitter(username string) {
 	if username == "leiter" {
-		panic(ec.ErrorUsernameAlreadyTaken)
+		panic(c.ErrorUsernameAlreadyTaken)
 	}
 }
 
 func mustSignUpPinterest(username string) {
 	if username == "q" {
-		panic(ec.ErrorUsernameAlreadyTaken)
+		panic(c.ErrorUsernameAlreadyTaken)
 	}
 }

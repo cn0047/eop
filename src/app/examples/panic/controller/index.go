@@ -3,7 +3,7 @@ package controller
 import (
 	"fmt"
 
-	"app/panic/service"
+	"app/examples/panic/service"
 )
 
 // SignUp - entrypoint for panic implementation.

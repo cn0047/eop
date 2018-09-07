@@ -1,4 +1,4 @@
-package taxonomy
+package common
 
 import "fmt"
 

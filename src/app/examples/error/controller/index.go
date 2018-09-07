@@ -3,7 +3,7 @@ package controller
 import (
 	"fmt"
 
-	"app/error/service"
+	"app/examples/error/service"
 )
 
 // SignUp - entrypoint for error implementation.

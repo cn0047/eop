@@ -26,7 +26,7 @@ you can see it on sequence diagram:
 
 ## The point
 
-You can go through `src/app` directory and find implementations for different approaches,
+You can go through `src/app/examples` directory and find implementations for different approaches,
 you can compare different approaches and decide which one is better for you.
 
 ## Usage
@@ -48,17 +48,17 @@ go run -race src/app/main.go --strategy=panic --username=bond
 go run -race src/app/main.go --strategy=panic --username=james
 
 # 3: return error from goroutine
-go run -race src/app/main.go --strategy=errorroutine
-go run -race src/app/main.go --strategy=errorroutine --username=bond
-go run -race src/app/main.go --strategy=errorroutine --username=james
+go run -race src/app/main.go --strategy=error_goroutine
+go run -race src/app/main.go --strategy=error_goroutine --username=bond
+go run -race src/app/main.go --strategy=error_goroutine --username=james
 
 # 4: panic in goroutine
-go run -race src/app/main.go --strategy=panicroutine
-go run -race src/app/main.go --strategy=panicroutine --username=bond
-go run -race src/app/main.go --strategy=panicroutine --username=james
+go run -race src/app/main.go --strategy=panic_goroutine
+go run -race src/app/main.go --strategy=panic_goroutine --username=bond
+go run -race src/app/main.go --strategy=panic_goroutine --username=james
 
 # 5: panic in goroutine like PRO 😎
-go run -race src/app/main.go --strategy=panicroutinepro
-go run -race src/app/main.go --strategy=panicroutinepro --username=bond
-go run -race src/app/main.go --strategy=panicroutinepro --username=james
+go run -race src/app/main.go --strategy=panic_goroutine_pro
+go run -race src/app/main.go --strategy=panic_goroutine_pro --username=bond
+go run -race src/app/main.go --strategy=panic_goroutine_pro --username=james
 ````

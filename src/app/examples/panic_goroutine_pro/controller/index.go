@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"app/panicroutinepro/common"
-	"app/panicroutinepro/service"
+	"app/common"
+	"app/examples/panic_goroutine_pro/service"
 )
 
 // SignUp - entrypoint for panicroutinepro implementation.

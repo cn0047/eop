@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"app/errorroutine/service"
+	"app/examples/error_goroutine/service"
 )
 
 // SignUp - entrypoint for errorroutine implementation.
