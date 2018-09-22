@@ -5,16 +5,16 @@ import (
 	"sync"
 
 	"app/common"
-	"app/examples/panic_goroutine_pro/service"
+	"app/examples/pro_panic_goroutine/service"
 )
 
-// SignUp - entrypoint for panicroutinepro implementation.
+// SignUp - entrypoint for pro_panic_goroutine implementation.
 func SignUp(username string) {
-	defer common.Recover(nil, func(err interface{}) {
-		fmt.Printf("[panicroutinepro] SignUp: %s \n", err.(error).Error())
+	defer common.Recover(func(err interface{}) {
+		fmt.Printf("[pro_panic_goroutine] SignUp: %s \n", err.(error).Error())
 	})
 	performMustSignUp(username)
-	fmt.Printf("[panicroutinepro] SignUp: %s \n", "ok")
+	fmt.Printf("[pro_panic_goroutine] SignUp: %s \n", "ok")
 }
 
 func performMustSignUp(username string) {

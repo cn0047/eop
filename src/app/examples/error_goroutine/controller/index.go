@@ -7,13 +7,13 @@ import (
 	"app/examples/error_goroutine/service"
 )
 
-// SignUp - entrypoint for errorroutine implementation.
+// SignUp - entrypoint for error_goroutine implementation.
 func SignUp(username string) {
 	msg := "ok"
 	if err := performSignUp(username); err != nil {
 		msg = err.Error()
 	}
-	fmt.Printf("[errorroutine] SignUp: %s \n", msg)
+	fmt.Printf("[error_goroutine] SignUp: %s \n", msg)
 }
 
 func performSignUp(username string) error {

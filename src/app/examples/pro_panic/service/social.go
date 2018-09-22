@@ -1,17 +1,11 @@
 package service
 
 import (
-	"sync"
-
 	c "app/common"
 )
 
 // MustSignUp - facade for bunch of functions.
-func MustSignUp(username string, ch chan error, wg *sync.WaitGroup) {
-	defer wg.Done()
-	defer c.Recover([]error{c.ErrorUsernameBlank, c.ErrorUsernameAlreadyTaken}, func(err interface{}) {
-		ch <- err.(error)
-	})
+func MustSignUp(username string) {
 	mustValidation(username)
 	mustSignUpFacebook(username)
 	mustSignUpTwitter(username)

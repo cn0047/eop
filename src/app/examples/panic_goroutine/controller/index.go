@@ -7,14 +7,14 @@ import (
 	"app/examples/panic_goroutine/service"
 )
 
-// SignUp - entrypoint for panicroutine implementation.
+// SignUp - entrypoint for panic_goroutine implementation.
 func SignUp(username string) {
 	defer func() {
 		msg := "ok"
 		if r := recover(); r != nil {
 			msg = r.(error).Error()
 		}
-		fmt.Printf("[panicroutine] SignUp: %s \n", msg)
+		fmt.Printf("[panic_goroutine] SignUp: %s \n", msg)
 	}()
 	performMustSignUp(username)
 }

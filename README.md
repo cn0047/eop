@@ -13,7 +13,7 @@ first one - return error, another one - panic.
 ## Prerequisites
 
 Common stuff between all approaches - workflow:
-here I have one controller which calls service function
+here you can find one controller which calls service function
 which works like a facade and performs sign up into:
 
 * facebook
@@ -37,28 +37,33 @@ To check that all approaches work in same way you can run:
 git clone https://github.com/cn007b/eop.git && cd eop
 export GOPATH=$PWD
 
-# 1: return error
+# return error:
 go run -race src/app/main.go --strategy=error
 go run -race src/app/main.go --strategy=error --username=bond
 go run -race src/app/main.go --strategy=error --username=james
 
-# 2: panic
-go run -race src/app/main.go --strategy=panic
-go run -race src/app/main.go --strategy=panic --username=bond
-go run -race src/app/main.go --strategy=panic --username=james
-
-# 3: return error from goroutine
+# return error from goroutine:
 go run -race src/app/main.go --strategy=error_goroutine
 go run -race src/app/main.go --strategy=error_goroutine --username=bond
 go run -race src/app/main.go --strategy=error_goroutine --username=james
 
-# 4: panic in goroutine
+# panic:
+go run -race src/app/main.go --strategy=panic
+go run -race src/app/main.go --strategy=panic --username=bond
+go run -race src/app/main.go --strategy=panic --username=james
+
+# panic in goroutine:
 go run -race src/app/main.go --strategy=panic_goroutine
 go run -race src/app/main.go --strategy=panic_goroutine --username=bond
 go run -race src/app/main.go --strategy=panic_goroutine --username=james
 
-# 5: panic in goroutine like PRO 😎
-go run -race src/app/main.go --strategy=panic_goroutine_pro
-go run -race src/app/main.go --strategy=panic_goroutine_pro --username=bond
-go run -race src/app/main.go --strategy=panic_goroutine_pro --username=james
+# panic like PRO:
+go run -race src/app/main.go --strategy=pro_panic
+go run -race src/app/main.go --strategy=pro_panic --username=bond
+go run -race src/app/main.go --strategy=pro_panic --username=james
+
+# panic in goroutine like PRO:
+go run -race src/app/main.go --strategy=pro_panic_goroutine
+go run -race src/app/main.go --strategy=pro_panic_goroutine --username=bond
+go run -race src/app/main.go --strategy=pro_panic_goroutine --username=james
 ````

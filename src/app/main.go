@@ -7,7 +7,8 @@ import (
 	errorGoroutineController "app/examples/error_goroutine/controller"
 	panicController "app/examples/panic/controller"
 	panicGoroutineController "app/examples/panic_goroutine/controller"
-	panicGoroutineProController "app/examples/panic_goroutine_pro/controller"
+	proPanicController "app/examples/pro_panic/controller"
+	proPanicGoroutineController "app/examples/pro_panic_goroutine/controller"
 )
 
 func main() {
@@ -28,7 +29,9 @@ func main() {
 		panicController.SignUp(username)
 	case "panic_goroutine":
 		panicGoroutineController.SignUp(username)
-	case "panic_goroutine_pro":
-		panicGoroutineProController.SignUp(username)
+	case "pro_panic":
+		proPanicController.SignUp(username)
+	case "pro_panic_goroutine":
+		proPanicGoroutineController.SignUp(username)
 	}
 }
