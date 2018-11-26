@@ -2,6 +2,8 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"time"
 
 	errorController "app/examples/error/controller"
 	errorGoroutineController "app/examples/error_goroutine/controller"
@@ -20,6 +22,7 @@ func main() {
 
 	flag.Parse()
 
+	startedAt := time.Now().UnixNano()
 	switch strategy {
 	case "error":
 		errorController.SignUp(username)
@@ -34,4 +37,7 @@ func main() {
 	case "pro_panic_goroutine":
 		proPanicGoroutineController.SignUp(username)
 	}
+	finishedAt := time.Now().UnixNano()
+
+	fmt.Printf("Took: %d nanoseconds\n", (finishedAt - startedAt) / 1)
 }
