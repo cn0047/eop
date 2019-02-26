@@ -24,10 +24,12 @@ you can see it on sequence diagram:
 
 ![sequence diagram](/sequenceDiagram.png)
 
-## The point
+## Main idea
 
 You can go through `src/app/examples` directory and find implementations for different approaches,
 you can compare different approaches and decide which one is better for you.
+<br>But regarding amount of code it looks like this:
+![e VS p](/eVSp.png)
 
 ## Usage
 
